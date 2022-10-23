@@ -5,7 +5,9 @@ const bodyParser  = require('body-parser')
 
 var PORT = process.env.port || 3000
 app.use(express.static('views'))
+app.use(express.static('public'))
 app.use(express.static('controllers'))
+
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
