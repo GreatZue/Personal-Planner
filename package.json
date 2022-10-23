@@ -1,0 +1,22 @@
+{
+  "name": "personal-planner",
+  "version": "1.0.0",
+  "description": "\"# personal-planner\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreatZue/personal-planner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreatZue/personal-planner/issues"
+  },
+  "homepage": "https://github.com/GreatZue/personal-planner#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
