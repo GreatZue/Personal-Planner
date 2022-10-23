@@ -3,12 +3,10 @@ const path = require('path')
 const app = express()
 const bodyParser  = require('body-parser')
 
+var PORT = process.env.port || 3000
+app.use(express.static('views'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-// app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static('public'))
-
-var PORT = process.env.port || 3000
 
 app.listen(PORT, function(error) {
     if (error) throw error
@@ -16,5 +14,5 @@ app.listen(PORT, function(error) {
 })
 
 app.get('/', (req, res) => {
-    res.send()
+    res.send('index.html')
 })
