@@ -13,4 +13,4 @@ async function getPhotos() {
     }
 }
 
-export {getPhotos}
+module.exports = {getPhotos}

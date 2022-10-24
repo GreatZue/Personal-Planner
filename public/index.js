@@ -3,7 +3,6 @@ const path = require('path')
 const app = express()
 const bodyParser  = require('body-parser')
 
-// import { getPhotos as photoController }  from '../controllers/photoController'
 const photoController = require('../controllers/photoController')
 
 var PORT = process.env.port || 3000
@@ -22,7 +21,6 @@ app.listen(PORT, function(error) {
 app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views/index.html'))
     async function getPhotos() {
-        // photoController.getPhotos()
         photoController.getPhotos()
     }
 })
