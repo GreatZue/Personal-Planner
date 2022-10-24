@@ -3,7 +3,7 @@ require('dontenv').config();
 
 const url = new URL('https://api.unsplash.com/photos/?client+id=')
 
-export async function getPhotos() {
+async function getPhotos() {
     try {
         document.getElementById
         axios.get(url + process.env.ACCESS_KEY)
@@ -13,3 +13,4 @@ export async function getPhotos() {
     }
 }
 
+export {getPhotos}
