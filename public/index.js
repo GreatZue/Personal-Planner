@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const app = express()
@@ -19,9 +20,7 @@ app.listen(PORT, function(error) {
 })
 
 app.get('/', (req, res, next) => {
+    photoController()
     res.sendFile(path.join(__dirname, '../views/index.html'))
-    async function getPhotos() {
-        photoController.getPhotos()
-    }
 })
 

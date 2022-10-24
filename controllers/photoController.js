@@ -1,16 +1,25 @@
+require('dotenv').config({path: '../.env'})
 const axios = require('axios')
-require('dontenv').config();
 
-const url = new URL('https://api.unsplash.com/photos/?client+id=')
+const url = new URL('https://api.unsplash.com/photos/random/?client_id=')
 
-async function getPhotos() {
+module.exports = async function getPhotos() {
     try {
-        document.getElementById
+        // axios.get(url + process.env.ACCESS_KEY)
         axios.get(url + process.env.ACCESS_KEY)
+
+        .then(function (response) {
+            console.log(response.data.urls)
+            updateDOM()
+            return response.data.urls
+        })
     }
     catch (error) {
-        console.log("Could not retreive photos.")
+        console.log(process.env.ACCESS_KEY, "Could not retreive photos.")
     }
 }
+function updateDOM() {
+    
+}
 
-module.exports = {getPhotos}
+require('../controllers/photoController.js')
