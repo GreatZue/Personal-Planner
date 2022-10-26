@@ -4,7 +4,7 @@ const path = require('path')
 const app = express()
 const bodyParser  = require('body-parser')
 
-const photoController = require('../controllers/photoController')
+import {getPhotos} from '../controllers/photoController.js'
 
 var PORT = process.env.port || 3000
 
@@ -20,7 +20,7 @@ app.listen(PORT, function(error) {
 })
 
 app.get('/', (req, res, next) => {
-    photoController()
+    getPhotos()
     res.sendFile(path.join(__dirname, '../views/index.html'))
 })
 

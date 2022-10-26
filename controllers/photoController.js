@@ -3,14 +3,12 @@ const axios = require('axios')
 
 const url = new URL('https://api.unsplash.com/photos/random/?client_id=')
 
-module.exports = async function getPhotos() {
+export async function getPhotos() {
     try {
         // axios.get(url + process.env.ACCESS_KEY)
         axios.get(url + process.env.ACCESS_KEY)
-
         .then(function (response) {
             console.log(response.data.urls)
-            updateDOM()
             return response.data.urls
         })
     }
@@ -18,8 +16,6 @@ module.exports = async function getPhotos() {
         console.log(process.env.ACCESS_KEY, "Could not retreive photos.")
     }
 }
-function updateDOM() {
-    
-}
 
-require('../controllers/photoController.js')
+
+// require('./photoController.js')
