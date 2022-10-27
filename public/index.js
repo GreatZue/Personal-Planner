@@ -1,5 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
 import path from 'path'
 import express from 'express'
 let app = express()
@@ -8,8 +6,6 @@ import { fileURLToPath } from 'url'
 import {dirname} from 'path'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename)
-
-
 
 import {getPhotos} from '../controllers/photoController.js'
 
