@@ -1,6 +1,8 @@
-// const photoController = require('../controllers/photoController')
+import photoCollection from '../controllers/photoController.js'
 
-// let unsplashBG = document.getElementById('unsplash-background')
+let unsplash = document.getElementById('unsplash-background')
+unsplash.addEventListener('DOMContentLoaded', setPhotos())
 
-
-
+function setPhotos() {
+    unsplash.style.background.url(photoCollection.full)
+}

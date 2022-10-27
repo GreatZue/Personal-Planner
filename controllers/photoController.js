@@ -1,15 +1,18 @@
-require('dotenv').config({path: '../.env'})
-const axios = require('axios')
-
+import dotenv from 'dotenv'
+dotenv.config()
+import axios from 'axios'
 const url = new URL('https://api.unsplash.com/photos/random/?client_id=')
+let photoCollection = []
+
+
 
 export async function getPhotos() {
     try {
-        // axios.get(url + process.env.ACCESS_KEY)
         axios.get(url + process.env.ACCESS_KEY)
         .then(function (response) {
-            console.log(response.data.urls)
-            return response.data.urls
+            photoCollection = response.data.urls
+            console.log(photoCollection)
+            return photoCollection
         })
     }
     catch (error) {
@@ -17,5 +20,4 @@ export async function getPhotos() {
     }
 }
 
-
-// require('./photoController.js')
+export {photoCollection}
