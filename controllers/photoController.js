@@ -3,15 +3,12 @@ dotenv.config()
 import axios from 'axios'
 const url = new URL('https://api.unsplash.com/photos/random/?client_id=')
 
-export let photoCollection = {}
-
-
 export async function getPhotos() {
     try {
         axios.get(url + process.env.ACCESS_KEY)
         .then(function (response) {
-            photoCollection = response.data.urls
-            console.log(photoCollection)
+           let photoCollection = response.data.urls
+            // console.log(photoCollection)
             return photoCollection
         })
     }
